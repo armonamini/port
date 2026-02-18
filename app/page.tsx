@@ -1,12 +1,46 @@
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
+import Experience from '@/components/Experience';
+import Footer from '@/components/Footer';
+
 export default function Home() {
   return (
-    <main className="min-h-screen p-8">
-      <h1 className="font-serif text-4xl font-bold text-text-primary">
-        Port
-      </h1>
-      <p className="font-sans mt-4 text-text-primary">
-        Design system test - Inter (body) and Cormorant Garamond (headings)
-      </p>
-    </main>
+    <>
+      <Header />
+      <main className="scroll-smooth">
+        <Hero />
+        
+        {/* Soft fade transition from Hero to Projects */}
+        <div
+          className="relative h-32 -mt-16 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(247, 245, 242, 1), rgba(236, 231, 225, 1))',
+          }}
+        />
+        
+        <Projects />
+        
+        {/* Soft fade transition from Projects to Experience */}
+        <div
+          className="relative h-32 -mt-16 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(236, 231, 225, 1), rgba(242, 239, 234, 1))',
+          }}
+        />
+        
+        <Experience />
+        
+        {/* Soft fade transition from Experience to Footer */}
+        <div
+          className="relative h-32 -mt-16 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to bottom, rgba(242, 239, 234, 1), rgba(227, 222, 214, 1))',
+          }}
+        />
+        
+        <Footer />
+      </main>
+    </>
   );
 }
