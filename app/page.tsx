@@ -1,4 +1,6 @@
+import { ScrollProvider } from '@/contexts/ScrollContext';
 import Header from '@/components/Header';
+import FloatingNav from '@/components/FloatingNav';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
@@ -6,8 +8,9 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <ScrollProvider>
       <Header />
+      <FloatingNav />
       <main className="scroll-smooth">
         <Hero />
         
@@ -41,6 +44,6 @@ export default function Home() {
         
         <Footer />
       </main>
-    </>
+    </ScrollProvider>
   );
 }
